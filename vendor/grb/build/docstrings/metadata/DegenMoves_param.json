@@ -1,0 +1,8 @@
+{
+  "name": "DegenMoves",
+  "url": "https://www.gurobi.com/documentation/11.0/refman/degenmoves.html",
+  "dtype": "int",
+  "default": "-1",
+  "min": "-1",
+  "max": "MAXINT"
+}

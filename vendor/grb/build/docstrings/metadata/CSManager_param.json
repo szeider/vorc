@@ -1,0 +1,6 @@
+{
+  "name": "CSManager",
+  "url": "https://www.gurobi.com/documentation/11.0/refman/csmanager.html",
+  "dtype": "str",
+  "default": "\"\""
+}

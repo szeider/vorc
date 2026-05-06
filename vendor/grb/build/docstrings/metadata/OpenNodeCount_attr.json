@@ -1,0 +1,7 @@
+{
+  "name": "OpenNodeCount",
+  "url": "https://www.gurobi.com/documentation/11.0/refman/opennodecount.html",
+  "dtype": "dbl",
+  "otype": "model",
+  "modifiable": false
+}

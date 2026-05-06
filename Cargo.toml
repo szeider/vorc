@@ -1,0 +1,26 @@
+[package]
+name = "vipr-oracle"
+version = "1.0.0"
+edition = "2024"
+authors = ["Stefan Szeider <stefan@szeider.net>"]
+license = "MIT"
+description = "VORC: Oracle-guided VIPR certificate construction for ILP/MIP"
+repository = "https://github.com/szeider/vorc"
+readme = "README.md"
+keywords = ["mip", "ilp", "verification", "vipr", "optimization"]
+categories = ["algorithms", "mathematics", "science"]
+
+[dependencies]
+grb = { version = "3", features = ["gurobi12"] }
+grb-sys2 = "12"
+num-rational = "0.4"
+num-bigint = "0.4"
+num-traits = "0.2"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+indexmap = "2"
+flate2 = "1"
+libc = "0.2"
+
+[patch.crates-io]
+grb = { path = "vendor/grb" }

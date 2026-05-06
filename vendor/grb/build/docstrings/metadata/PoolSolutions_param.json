@@ -1,0 +1,8 @@
+{
+  "name": "PoolSolutions",
+  "url": "https://www.gurobi.com/documentation/11.0/refman/poolsolutions.html",
+  "dtype": "int",
+  "default": "10",
+  "min": "1",
+  "max": "MAXINT"
+}

@@ -1,0 +1,8 @@
+/target/
+*.bk
+*.log
+*.vipr
+*.sol
+*.ilp
+*.prm
+.DS_Store

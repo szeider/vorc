@@ -1,0 +1,7 @@
+{
+  "name": "Partition",
+  "url": "https://www.gurobi.com/documentation/11.0/refman/partition.html",
+  "dtype": "int",
+  "otype": "var",
+  "modifiable": true
+}

@@ -1,0 +1,107 @@
+[package]
+authors = ["Yannik Rist <yannik.rist@uqconnect.edu.au>"]
+autoexamples = false
+categories = ["algorithms", "api-bindings", "mathematics", "science"]
+description = "A Rust API for Gurobi optimizer"
+edition = "2018"
+keywords = ["optimization", "simplex", "constraint", "mip", "solver"]
+license = "MIT"
+name = "grb"
+repository = "https://github.com/ykrist/rust-grb"
+homepage = "https://github.com/ykrist/rust-grb"
+version = "3.0.1"
+build = "build/main.rs"
+readme = "README.md"
+exclude = ["/tests"]
+
+[features]
+default = []
+gurobi12 = ["grb-sys_12"]
+gurobi11 = ["grb-sys_10"]
+gurobi10 = ["grb-sys_10"]
+
+
+[package.metadata.docs.rs]
+features = ["gurobi12"]
+rustdoc-args = ["--html-in-header", "doc/katex-header.html"]
+
+[dependencies]
+fnv = "^1.0"
+anyhow = "^1.0"
+cstr-enum = "^1.0"
+grb-sys_10 = { package = "grb-sys2", version = "10.2.2", optional = true }
+grb-sys_12 = { package = "grb-sys2", version = "12.1.2", optional = true }
+# grb-sys_10 = {package = "grb-sys2", path="../grb-sys2", optional = true}
+# grb-sys_12 = {package = "grb-sys2", path="../grb-sys2", optional = true}
+grb-macro = "0.1.0"
+cfg-if = "1.0.0"
+
+[dev-dependencies]
+proptest = "^0.10"
+trybuild = "^1.0.64"
+gag = "^0.1"
+
+[build-dependencies]
+anyhow = "^1.0"
+csv = "^1.1"
+quote = "^1.0"
+proc-macro2 = "^1.0"
+serde = { version = "^1.0", features = ["derive"] }
+serde_json = "^1.0"
+
+[[example]]
+name = "callback"
+path = "examples/callback.rs"
+
+[[example]]
+name = "facility"
+path = "examples/facility.rs"
+
+[[example]]
+name = "mip"
+path = "examples/mip.rs"
+
+[[example]]
+name = "piecewise"
+path = "examples/piecewise.rs"
+
+[[example]]
+name = "qcp"
+path = "examples/qcp.rs"
+
+[[example]]
+name = "qp"
+path = "examples/qp.rs"
+
+[[example]]
+name = "sensitivity"
+path = "examples/sensitivity.rs"
+
+[[example]]
+name = "sos"
+path = "examples/sos.rs"
+
+[[example]]
+name = "tune"
+path = "examples/tune.rs"
+
+[[example]]
+name = "workforce1"
+path = "examples/workforce1.rs"
+
+[[example]]
+name = "workforce2"
+path = "examples/workforce2.rs"
+
+[[example]]
+name = "workforce3"
+path = "examples/workforce3.rs"
+
+[[example]]
+name = "tsp_lazy_constraints"
+path = "examples/tsp_lazy_constraints.rs"
+
+[lints.clippy]
+# it pops up all over the place because of `c!`
+# TODO: investigate
+useless_conversion = "allow"
