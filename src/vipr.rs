@@ -1,7 +1,7 @@
 //! VIPR certificate builder and writer.
 //!
 //! Builds the certificate incrementally during B&B traversal,
-//! then serializes to VIPR v1.0 format.
+//! then serializes to VIPR v1.1 format.
 
 use crate::rational::Rat;
 use crate::types::{ConIndex, ConPlan, Constraint, Derivation, Instance, Reason, VarIndex};
