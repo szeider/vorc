@@ -23,7 +23,8 @@ construction itself does not need an exact LP solver.
   - Add `$GUROBI_HOME/lib` to `LD_LIBRARY_PATH` (Linux) or
     `DYLD_LIBRARY_PATH` (macOS)
   - If the `grb` build script cannot auto-detect the Gurobi library
-    name, set `GUROBI_LIBNAME=gurobi120` explicitly
+    name, set `GUROBI_LIBNAME=gurobi120` explicitly (always needed on
+    macOS, where the build script only looks for `.so` files)
 - A C toolchain (for the Gurobi FFI bindings)
 
 The `vendor/grb/` subdirectory contains a locally patched version of
@@ -91,8 +92,8 @@ cargo test --release
 ```
 
 The unit tests parse and solve a small subset of the bundled LP
-instances. Tests that require Gurobi exit with a license error when
-no valid license is available.
+instances. Gurobi must be installed for the tests to compile; without it the
+build stops with "Unable to infer libname".
 
 ## Reproducing the paper's experiments
 
